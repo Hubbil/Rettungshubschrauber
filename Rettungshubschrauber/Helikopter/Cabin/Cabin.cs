@@ -1,6 +1,22 @@
-﻿namespace Rettungshubschrauber.Helikopter.Cabin;
+﻿using Rettungshubschrauber.Helikopter.Components;
+
+namespace Rettungshubschrauber.Helikopter.Cabin;
 
 public class Cabin
 {
+    public Seat LeftSeat { get; }
     
+    public Seat RightSeat { get; }
+    
+    public SlideDoor LeftDoor { get; set; }
+    
+    public SlideDoor RightDoor { get; set; }
+
+    public Cabin()
+    {
+        LeftSeat = new Seat();
+        RightSeat = new Seat();
+        LeftDoor = new SlideDoor();
+        RightDoor = new SlideDoor();
+    }
 }

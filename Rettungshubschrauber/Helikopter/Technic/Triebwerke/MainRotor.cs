@@ -2,5 +2,5 @@
 
 public class MainRotor
 {
-    
+    public int RotationRate { get; set; }
 }

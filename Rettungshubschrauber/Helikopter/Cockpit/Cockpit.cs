@@ -1,4 +1,6 @@
-﻿namespace Rettungshubschrauber.Helikopter.Cockpit;
+﻿using Rettungshubschrauber.Helikopter.Components;
+
+namespace Rettungshubschrauber.Helikopter.Cockpit;
 
 public class Cockpit
 {
