@@ -10,3 +10,4 @@ battery.discharge(3499);
 Console.Write($@"discharge 1 : {battery.GetLoadedCells()} ");
 battery.discharge(50001);
 Console.Write($@"discharge 2 : {battery.GetLoadedCells()} ");
+double test = 2;
