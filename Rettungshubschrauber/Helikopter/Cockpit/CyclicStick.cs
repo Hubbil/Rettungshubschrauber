@@ -1,66 +1,45 @@
-﻿using Rettungshubschrauber.Helikopter.Triebwerke;
+﻿using Rettungshubschrauber.Helikopter.Technic;
+using Rettungshubschrauber.Helikopter.Triebwerke;
 
 namespace Rettungshubschrauber.Helikopter.Cockpit;
 
 public class CyclicStick
 {
-    private MainRotor _mainRotor;
-    public CyclicStick()
-    {
-        
-    }
+    private CentralUnit Unit;
 
-    //intensity could be a natural number between 1 and 25
-    public void MoveForward(int intensity)
+    private static int[] steps = {0, 1, 2, 3, 4, 5};
+    public CyclicStick(CentralUnit centralUnit)
     {
-        double RotorTilt = intensity / 10;
-        if (_mainRotor.Tilt + RotorTilt > 2.5)
-        {
-            _mainRotor.Tilt = 2.5;
-        }
-        else
-        {
-            _mainRotor.Tilt += RotorTilt;
-        }
-    }
-
-    public void MoveBack(int intensity)
-    {
-        double RotorTilt = intensity / 10;
-        if (_mainRotor.Tilt + RotorTilt < 0)
-        {
-            _mainRotor.Tilt = 0;
-        }
-        else
-        {
-            _mainRotor.Tilt -= RotorTilt;
-        }
-    }
-
-    public void MoveLeft(int intensity)
-    {
-        double RotorTilt = intensity / 10;
-        if (_mainRotor.SideTilt + RotorTilt < -2.5)
-        {
-            _mainRotor.SideTilt = -2.5;
-        }
-        else
-        {
-            _mainRotor.SideTilt -= RotorTilt;
-        }
-    }
-
-    public void MoveRight(int intensity)
-    {
-        double RotorTilt = intensity / 10;
-        if (_mainRotor.SideTilt + RotorTilt > 2.5)
-        {
-            _mainRotor.SideTilt = 2.5;
-        }
-        else
-        {
-            _mainRotor.SideTilt += RotorTilt;
-        }
+        Unit = centralUnit;
     }
     
+    public void MoveVertical(int step)
+    {
+        if (steps.Contains(step))
+        {
+            Unit.TiltMainRotor(step, false);
+        }
+        else
+        {
+            Console.WriteLine($@"{step} ist keine valide Stufe!");
+        }
+    }
+
+    public void MoveHorizontal(int step, Direction direction)
+    {
+        if (steps.Contains(step))
+        {
+            double angle = step / 2;
+            if (direction == Direction.LEFT)
+            {
+                angle = -angle;
+            }
+
+            Unit.TiltMainRotor(angle, true);
+        }
+        else
+        {
+            Console.WriteLine($@"{step} ist keine valide Stufe!");
+        }
+    }
 }

@@ -1,4 +1,7 @@
-﻿namespace Rettungshubschrauber.Helikopter;
+﻿using Rettungshubschrauber.Helikopter.Technic;
+using Rettungshubschrauber.Helikopter.Triebwerke;
+
+namespace Rettungshubschrauber.Helikopter;
 
 public class Helikopter
 {
@@ -8,6 +11,16 @@ public class Helikopter
     public string Type { get; }
     
     public string Uuid { get; }
+    
+    public CentralUnit CentralUnit { get; set; }
+    
+    public Cockpit.Cockpit Cockpit { get; set; }
+    
+    public Cabin.Cabin Cabin { get; set; }
+    
+    public MainRotor MainRotor { get; set; }
+    
+    public TailRotor TailRotor { get; set; }
 
     public Helikopter()
     {
@@ -15,6 +28,10 @@ public class Helikopter
         Type = "M145";
         Guid t = Guid.NewGuid();
         Uuid = t.ToString();
+        MainRotor = new MainRotor();
+        TailRotor = new TailRotor();
+        CentralUnit = new CentralUnit(MainRotor, TailRotor);
+        Cockpit = new Cockpit.Cockpit(CentralUnit);
     }
     
 }

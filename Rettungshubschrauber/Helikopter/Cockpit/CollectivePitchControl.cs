@@ -1,89 +1,45 @@
-﻿using Rettungshubschrauber.Helikopter.Triebwerke;
+﻿using Rettungshubschrauber.Helikopter.Technic;
+using Rettungshubschrauber.Helikopter.Triebwerke;
 
 namespace Rettungshubschrauber.Helikopter.Cockpit;
 
 public class CollectivePitchControl
 {
-    private MainRotor _mainRotor;
+    private CentralUnit Unit;
 
-    public CollectivePitchControl()
+    private static int[] steps = { 0, 1, 2 };
+
+    public CollectivePitchControl(CentralUnit centralUnit)
     {
-        
+        Unit = centralUnit;
     }
 
-    public void pull(int step)
+    public void activate(int step)
     {
-        switch (step)
+        if (steps.Contains(step))
         {
-            case 0:
-                foreach (Blade blade in _mainRotor.Blades)
-                {
-                    blade.TurnAngle = 0;
-                }
+            switch (step)
+            {
+                case 0:
+                    Unit.ChangeBladeTurnAngle(0);
 
-                break;
-            
-            case 1:
-                foreach (Blade blade in _mainRotor.Blades)
-                {
-                    blade.TurnAngle = 1;
-                }
+                    break;
 
-                break;
-            
-            case 2:
-                foreach (Blade blade in _mainRotor.Blades)
-                {
-                    blade.TurnAngle = 2;
-                }
+                case 1:
+                    Unit.ChangeBladeTurnAngle(15);
 
-                break;
-            
-            case 3:
-                foreach (Blade blade in _mainRotor.Blades)
-                {
-                    blade.TurnAngle = 3;
-                }
+                    break;
 
-                break;
-            
-            case 4:
-                foreach (Blade blade in _mainRotor.Blades)
-                {
-                    blade.TurnAngle = 4;
-                }
+                case 2:
+                    Unit.ChangeBladeTurnAngle(-15);
 
-                break;
-            
-            case 5:
-                foreach (Blade blade in _mainRotor.Blades)
-                {
-                    blade.TurnAngle = 5;
-                }
-
-                break;
-            
-            case 6:
-                foreach (Blade blade in _mainRotor.Blades)
-                {
-                    blade.TurnAngle = 6;
-                }
-
-                break;
-            
-            case 7:
-                foreach (Blade blade in _mainRotor.Blades)
-                {
-                    blade.TurnAngle = 7;
-                }
-
-                break;
+                    break;
+            }
+        }
+        else
+        {
+            Console.WriteLine($@"{step} ist keine Valide Stufe!");
         }
 
-    }
-
-    public void push(int step)
-    {
-        
     }
 }

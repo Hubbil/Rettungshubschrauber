@@ -1,6 +1,6 @@
 ﻿namespace Rettungshubschrauber.Helikopter.Motors;
 
-public class ElectricMotor
+public class ElectricEngine
 {
     
 }

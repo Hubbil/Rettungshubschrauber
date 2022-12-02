@@ -1,19 +1,25 @@
-﻿namespace Rettungshubschrauber.Helikopter.Triebwerke;
+﻿using Rettungshubschrauber.Helikopter.Motors;
+
+namespace Rettungshubschrauber.Helikopter.Triebwerke;
 
 public class MainRotor
 {
+    public ElectricEngine Engine { get; set; }
     public int RotationRate { get; set; }
     
     public double Tilt { get; set; }
     
     public double SideTilt { get; set; }
 
-    private static double MaxTilt = 2.5;
+    private static double MaxTilt = 5;
+
+    private static double MaxSideTilt = 2.5;
     
     public Blade[] Blades { get; set; }
 
     public MainRotor()
     {
+        Engine = new ElectricEngine();
         Tilt = 0;
         SideTilt = 0;
         RotationRate = 0;

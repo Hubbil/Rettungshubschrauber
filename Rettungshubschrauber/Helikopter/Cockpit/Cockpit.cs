@@ -1,4 +1,5 @@
 ﻿using Rettungshubschrauber.Helikopter.Components;
+using Rettungshubschrauber.Helikopter.Technic;
 
 namespace Rettungshubschrauber.Helikopter.Cockpit;
 
@@ -32,7 +33,7 @@ public class Cockpit
     
     public ControlPanal rightPanal { get; set; }
 
-    public Cockpit()
+    public Cockpit(CentralUnit centralUnit)
     {
         leftDoor = new Door();
         rightDoor = new Door();
@@ -40,16 +41,16 @@ public class Cockpit
         rightSeat = new Seat();
         leftDisplay = new Display();
         rightDisplay = new Display();
-        leftStick = new CyclicStick();
-        RightStick = new CyclicStick();
-        leftPitchControl = new CollectivePitchControl();
-        rightPitchControl = new CollectivePitchControl();
+        leftStick = new CyclicStick(centralUnit);
+        RightStick = new CyclicStick(centralUnit);
+        leftPitchControl = new CollectivePitchControl(centralUnit);
+        rightPitchControl = new CollectivePitchControl(centralUnit);
         LeftPadels = new AntiTorguePadel[2];
-        LeftPadels[0] = new AntiTorguePadel();
-        LeftPadels[1] = new AntiTorguePadel();
+        LeftPadels[0] = new AntiTorguePadel(centralUnit, Position.Left);
+        LeftPadels[1] = new AntiTorguePadel(centralUnit, Position.Right);
         RightPadels = new AntiTorguePadel[2];
-        RightPadels[0] = new AntiTorguePadel();
-        RightPadels[1] = new AntiTorguePadel();
+        RightPadels[0] = new AntiTorguePadel(centralUnit, Position.Left);
+        RightPadels[1] = new AntiTorguePadel(centralUnit, Position.Right);
         leftPanal = new ControlPanal();
         rightPanal = new ControlPanal();
     }
