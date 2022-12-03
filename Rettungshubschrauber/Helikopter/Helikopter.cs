@@ -30,8 +30,10 @@ public class Helikopter
         Uuid = t.ToString();
         MainRotor = new MainRotor();
         TailRotor = new TailRotor();
-        CentralUnit = new CentralUnit(MainRotor, TailRotor);
+        CentralUnit = new CentralUnit();
         Cockpit = new Cockpit.Cockpit(CentralUnit);
+        Cabin = new Cabin.Cabin();
+        CentralUnit.SetHeli(this);
     }
     
 }

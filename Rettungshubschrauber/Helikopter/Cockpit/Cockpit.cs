@@ -51,7 +51,7 @@ public class Cockpit
         RightPadels = new AntiTorguePadel[2];
         RightPadels[0] = new AntiTorguePadel(centralUnit, Position.Left);
         RightPadels[1] = new AntiTorguePadel(centralUnit, Position.Right);
-        leftPanal = new ControlPanal();
-        rightPanal = new ControlPanal();
+        leftPanal = new ControlPanal(centralUnit);
+        rightPanal = new ControlPanal(centralUnit);
     }
 }

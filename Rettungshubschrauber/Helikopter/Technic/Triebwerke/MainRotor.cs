@@ -5,7 +5,8 @@ namespace Rettungshubschrauber.Helikopter.Triebwerke;
 public class MainRotor
 {
     public ElectricEngine Engine { get; set; }
-    public int RotationRate { get; set; }
+    
+    public int RPM { get; set; }
     
     public double Tilt { get; set; }
     
@@ -22,7 +23,7 @@ public class MainRotor
         Engine = new ElectricEngine();
         Tilt = 0;
         SideTilt = 0;
-        RotationRate = 0;
+        RPM = 0;
         Blades = new Blade[5];
         for (int i = 0; i < 5; i++)
         {

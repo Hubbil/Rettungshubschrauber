@@ -5,7 +5,7 @@ namespace Rettungshubschrauber.Helikopter.Triebwerke;
 
 public class TailRotor
 {
-    public int RotationRate { get; set; }
+    public int RPM { get; set; }
     
     public ElectricEngine Engine { get; set; }
     
@@ -14,5 +14,6 @@ public class TailRotor
     public TailRotor()
     {
         Engine = new ElectricEngine();
+        RPM = 0;
     }
 }
