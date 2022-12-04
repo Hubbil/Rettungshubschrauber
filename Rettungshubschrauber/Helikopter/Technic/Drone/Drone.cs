@@ -2,13 +2,15 @@
 
 public class Drone
 {
-    public Camera Camera { get; set; }
+    public CentralUnitDrone unit;
     
-    public MemoryCard MemoryCard { get; set; }
+    public Camera Camera { get; set; }
 
-    public Drone()
+    public Drone(CentralUnit unit, Section[] sections)
     {
-        Camera = new Camera();
-        MemoryCard = new MemoryCard();
+        Camera = new Camera(sections);
+        this.unit = new CentralUnitDrone(unit,Camera);
     }
+
+    
 }

@@ -145,10 +145,15 @@ public class Area
         int RandomRow = r.Next(0, 49);
         int RandomColumn = r.Next(0, 45);
 
-        Sections[RandomSection].Content[RandomRow, RandomColumn] = "h";
-        Sections[RandomSection].Content[RandomRow, RandomColumn + 1] = "u";
-        Sections[RandomSection].Content[RandomRow, RandomColumn + 2] = "m";
-        Sections[RandomSection].Content[RandomRow, RandomColumn + 3] = "a";
-        Sections[RandomSection].Content[RandomRow, RandomColumn + 4] = "n";
+        Sections[0].Content[RandomRow, RandomColumn] = "h";
+        Sections[0].Content[RandomRow, RandomColumn + 1] = "u";
+        Sections[0].Content[RandomRow, RandomColumn + 2] = "m";
+        Sections[0].Content[RandomRow, RandomColumn + 3] = "a";
+        Sections[0].Content[RandomRow, RandomColumn + 4] = "n";
+    }
+
+    public Section[] getSections()
+    {
+        return Sections;
     }
 }
