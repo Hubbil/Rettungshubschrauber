@@ -2,7 +2,7 @@
 
 public class Saved
 {
-    private DateTime timestamp;
+    private string timestamp;
     private string[,] section;
     private string[,] picture;
     private int xKoordinate;
@@ -10,7 +10,7 @@ public class Saved
 
     public Saved(string[,] Section, string[,] Picture, int x, int y)
     {
-        timestamp = DateTime.Now;
+        timestamp = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
         section = Section;
         picture = Picture;
         xKoordinate = x;
