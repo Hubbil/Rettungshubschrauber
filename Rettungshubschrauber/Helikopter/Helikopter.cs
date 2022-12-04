@@ -59,9 +59,11 @@ public class Helikopter
     {
     }
 
-    public void Flight(int distance)
+    public void Flight()
     {
-        
+        int combinedRpm = MainRotor.RPM + TailRotor.RPM;
+        int energyNeeded = combinedRpm * 10;
+        EnergyUnit.TakeEnergy(energyNeeded);
     }
 
     public void Stop()
