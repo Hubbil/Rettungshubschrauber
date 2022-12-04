@@ -29,7 +29,7 @@ public class Helikopter
     
     public EnergyUnit EnergyUnit { get; set; }
     
-    public Drone Drone { get; set; }
+    public DroneLug DroneLug { get; set; }
     
     public int Height { get; set; }
     
@@ -51,7 +51,7 @@ public class Helikopter
         Cabin = new Cabin.Cabin();
         AntiCollisionLight = new AntiCollisionLight();
         LandingLight = new LandingLight();
-        Drone = new Drone();
+        DroneLug = new DroneLug(new Drone());
         CentralUnit.SetHeli(this);
     }
 
