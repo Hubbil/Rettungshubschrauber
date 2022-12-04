@@ -11,9 +11,8 @@ public class Camera
     {
         this.searchArea = searchArea;
     }
-    public string[,] getSection()
+    public string[,] getSection(int x)
     {
-        Random r = new Random();
-        return searchArea[0].Content;
+        return searchArea[x].Content;
     }
 }

@@ -5,10 +5,10 @@ using Rettungshubschrauber.Helikopter.Technic;
 using Rettungshubschrauber.Helikopter.Technic.Drone;
 
 Area area = new Area();
-foreach (string f in area.Sections[0].Content)
+foreach (string f in area.Sections[1].Content)
 {
     Console.WriteLine(f);
 }
 
 Helikopter heli = new Helikopter(area.getSections());
-heli.DroneLug.Drone.unit.sendSection();
+heli.DroneLug.Drone.unit.startSectionInspection();
