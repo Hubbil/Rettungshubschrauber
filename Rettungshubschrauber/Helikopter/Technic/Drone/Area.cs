@@ -130,7 +130,7 @@ public class Area
             for (int i = iStart; i < iMax; i++)
             {
                 SectionJ = 0;
-                for (int j = jStart; j < jMax; j++)
+                for (int j = jStart; j <= jMax; j++)
                 {
                     Sections[m].Content[SectionI,SectionJ] = Content[i, j];
                     SectionJ++;
@@ -149,11 +149,11 @@ public class Area
         int RandomRow = r.Next(0, 49);
         int RandomColumn = r.Next(0, 45);
 
-        Sections[0].Content[RandomRow, RandomColumn] = "h";
-        Sections[0].Content[RandomRow, RandomColumn + 1] = "u";
-        Sections[0].Content[RandomRow, RandomColumn + 2] = "m";
-        Sections[0].Content[RandomRow, RandomColumn + 3] = "a";
-        Sections[0].Content[RandomRow, RandomColumn + 4] = "n";
+        Sections[RandomSection].Content[RandomRow, RandomColumn] = "h";
+        Sections[RandomSection].Content[RandomRow, RandomColumn + 1] = "u";
+        Sections[RandomSection].Content[RandomRow, RandomColumn + 2] = "m";
+        Sections[RandomSection].Content[RandomRow, RandomColumn + 3] = "a";
+        Sections[RandomSection].Content[RandomRow, RandomColumn + 4] = "n";
     }
 
     public Section[] getSections()

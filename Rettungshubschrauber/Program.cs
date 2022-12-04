@@ -4,6 +4,11 @@ using Rettungshubschrauber.Helikopter;
 using Rettungshubschrauber.Helikopter.Technic;
 using Rettungshubschrauber.Helikopter.Technic.Drone;
 
-Area a = new Area();
-Helikopter heli = new Helikopter(a.Sections);
-heli.CentralUnit.DeactivateLandingLight();
+Area area = new Area();
+foreach (string f in area.Sections[0].Content)
+{
+    Console.WriteLine(f);
+}
+
+Helikopter heli = new Helikopter(area.getSections());
+heli.DroneLug.Drone.unit.sendSection();
