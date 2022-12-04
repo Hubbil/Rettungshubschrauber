@@ -17,8 +17,10 @@ public class ControlPanal
     public RotaryKnob Knob { get; set; }
 
     private CentralUnit CentralUnit;
+
+    private EnergyUnit _energyUnit;
     
-    public ControlPanal(CentralUnit unit)
+    public ControlPanal(CentralUnit unit, EnergyUnit eunit)
     {
         MainRotorButton = new Button();
         TailRotorButton = new Button();
@@ -27,6 +29,7 @@ public class ControlPanal
         LockDoorsButton = new Button();
         Knob = new RotaryKnob();
         CentralUnit  = unit;
+        _energyUnit = eunit;
     }
 
     public void SwitchMainRotorButton()
@@ -96,6 +99,19 @@ public class ControlPanal
         {
             LockDoorsButton.IsOn = true;
             CentralUnit.LockBackDoors();
+        }
+    }
+
+    public void TurnRotaryKnob(string state)
+    {
+        if (Knob.States.Contains(state))
+        {
+            Knob.State = state;
+            _energyUnit.Mode = state;
+        }
+        else
+        {
+            Console.WriteLine($@"{state} ist kein valider Batteriestatus!");
         }
     }
 }

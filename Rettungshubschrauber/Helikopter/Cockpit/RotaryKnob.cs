@@ -4,8 +4,10 @@ public class RotaryKnob
 {
     public string State { get; set; }
 
-    public void turn(String state)
+    public string[] States = { "L", "R", "B"};
+
+    public RotaryKnob()
     {
-        State = state;
+        
     }
 }

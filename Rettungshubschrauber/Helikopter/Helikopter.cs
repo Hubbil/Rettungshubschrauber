@@ -46,11 +46,11 @@ public class Helikopter
         MainRotor = new MainRotor();
         TailRotor = new TailRotor();
         CentralUnit = new CentralUnit();
-        Cockpit = new Cockpit.Cockpit(CentralUnit);
+        EnergyUnit = new EnergyUnit();
+        Cockpit = new Cockpit.Cockpit(CentralUnit, EnergyUnit);
         Cabin = new Cabin.Cabin();
         AntiCollisionLight = new AntiCollisionLight();
         LandingLight = new LandingLight();
-        EnergyUnit = new EnergyUnit();
         Drone = new Drone();
         CentralUnit.SetHeli(this);
     }
