@@ -61,41 +61,41 @@ public class ControlPanal
     {
         if (AntiCollisionLight.IsOn)
         {
-            TailRotorButton.IsOn = false;
-            CentralUnit.DeactivateTailRotor();
+            AntiCollisionLight.IsOn = false;
+            CentralUnit.DeActivateAntiCollisionLight();
         }
         else
         {
-            TailRotorButton.IsOn = true;
-            CentralUnit.ActivateTailRotor();
+            AntiCollisionLight.IsOn = true;
+            CentralUnit.ActivateAntiCollisionLight();
         }
     }
 
     public void SwitchLandingLightButton()
     {
-        if (TailRotorButton.IsOn)
+        if (LandingLight.IsOn)
         {
-            TailRotorButton.IsOn = false;
-            CentralUnit.DeactivateTailRotor();
+            LandingLight.IsOn = false;
+            CentralUnit.DeactivateLandingLight();
         }
         else
         {
-            TailRotorButton.IsOn = true;
-            CentralUnit.ActivateTailRotor();
+            LandingLight.IsOn = true;
+            CentralUnit.ActivateLandingLight();
         }
     }
 
     public void SwitchDoorButton()
     {
-        if (TailRotorButton.IsOn)
+        if (LockDoorsButton.IsOn)
         {
-            TailRotorButton.IsOn = false;
-            CentralUnit.DeactivateTailRotor();
+            LockDoorsButton.IsOn = false;
+            CentralUnit.UnlockBackDoors();
         }
         else
         {
-            TailRotorButton.IsOn = true;
-            CentralUnit.ActivateTailRotor();
+            LockDoorsButton.IsOn = true;
+            CentralUnit.LockBackDoors();
         }
     }
 }

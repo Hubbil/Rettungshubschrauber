@@ -7,7 +7,7 @@ public class CyclicStick
 {
     private CentralUnit Unit;
 
-    private static int[] steps = {0, 1, 2, 3, 4, 5};
+    private static double[] steps = {0, 1, 2, 3, 4, 5};
     public CyclicStick(CentralUnit centralUnit)
     {
         Unit = centralUnit;
@@ -25,7 +25,7 @@ public class CyclicStick
         }
     }
 
-    public void MoveHorizontal(int step, Direction direction)
+    public void MoveHorizontal(double step, Direction direction)
     {
         if (steps.Contains(step))
         {

@@ -8,8 +8,6 @@ public class TailRotor
     public int RPM { get; set; }
     
     public ElectricEngine Engine { get; set; }
-    
-    public Direction RotatioDirection { get; set; }
 
     public TailRotor()
     {
