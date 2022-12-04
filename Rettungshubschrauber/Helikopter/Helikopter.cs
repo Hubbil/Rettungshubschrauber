@@ -35,7 +35,7 @@ public class Helikopter
     
     public int Speed { get; set; }
     
-    public Helikopter()
+    public Helikopter(Section[] section)
     {
         Id = "D-MGHX";
         Type = "M145";
@@ -51,7 +51,7 @@ public class Helikopter
         Cabin = new Cabin.Cabin();
         AntiCollisionLight = new AntiCollisionLight();
         LandingLight = new LandingLight();
-        DroneLug = new DroneLug(new Drone(CentralUnit));
+        DroneLug = new DroneLug(new Drone(CentralUnit,section));
         CentralUnit.SetHeli(this);
     }
 

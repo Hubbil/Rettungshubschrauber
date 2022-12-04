@@ -6,9 +6,9 @@ public class Drone
     
     public Camera Camera { get; set; }
 
-    public Drone(CentralUnit unit)
+    public Drone(CentralUnit unit, Section[] sections)
     {
-        Camera = new Camera();
+        Camera = new Camera(sections);
         this.unit = new CentralUnitDrone(unit,Camera);
     }
 
