@@ -2,5 +2,11 @@
 
 public class Camera
 {
-    
+
+    public Section[] searchArea; 
+    public string[,] getSection()
+    {
+        Random r = new Random();
+        return searchArea[r.Next(searchArea.Length)].getContent();
+    }
 }

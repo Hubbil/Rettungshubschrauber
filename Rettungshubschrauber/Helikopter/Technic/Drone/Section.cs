@@ -8,4 +8,9 @@ public class Section
     {
         Content = new string[50, 50];
     }
+    
+    public string[,] getContent()
+    {
+        return Content;
+    }
 }

@@ -51,7 +51,7 @@ public class Helikopter
         Cabin = new Cabin.Cabin();
         AntiCollisionLight = new AntiCollisionLight();
         LandingLight = new LandingLight();
-        DroneLug = new DroneLug(new Drone());
+        DroneLug = new DroneLug(new Drone(CentralUnit));
         CentralUnit.SetHeli(this);
     }
 
