@@ -104,6 +104,11 @@ public class CentralUnit
         _helikopter.Cabin.LeftDoor.Locked = false;
     }
 
+    public void ReleaseDrone()
+    {
+        _helikopter.DroneLug.Drone = null;
+    }
+
     public void Stop()
     {
         DeactivateMainRotor();
