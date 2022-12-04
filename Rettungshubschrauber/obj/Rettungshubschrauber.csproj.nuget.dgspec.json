@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\OneDrive\\Dokumente\\DHBW\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber.csproj": {}
+    "C:\\Users\\marku\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber.csproj": {}
   },
   "projects": {
-    "E:\\OneDrive\\Dokumente\\DHBW\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber.csproj": {
+    "C:\\Users\\marku\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\OneDrive\\Dokumente\\DHBW\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber.csproj",
+        "projectUniqueName": "C:\\Users\\marku\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber.csproj",
         "projectName": "Rettungshubschrauber",
-        "projectPath": "E:\\OneDrive\\Dokumente\\DHBW\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber.csproj",
-        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-        "outputPath": "E:\\OneDrive\\Dokumente\\DHBW\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber\\obj\\",
+        "projectPath": "C:\\Users\\marku\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\Rettungshubschrauber.csproj",
+        "packagesPath": "C:\\Users\\marku\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marku\\RiderProjects\\Rettungshubschrauber\\Rettungshubschrauber\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\marku\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\simon\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\marku\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

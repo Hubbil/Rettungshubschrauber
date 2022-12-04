@@ -33,7 +33,7 @@ public class Cockpit
     
     public ControlPanal rightPanal { get; set; }
 
-    public Cockpit(CentralUnit centralUnit)
+    public Cockpit(CentralUnit centralUnit, EnergyUnit energyUnit)
     {
         leftDoor = new Door();
         rightDoor = new Door();
@@ -51,7 +51,7 @@ public class Cockpit
         RightPadels = new AntiTorguePadel[2];
         RightPadels[0] = new AntiTorguePadel(centralUnit, Position.Left);
         RightPadels[1] = new AntiTorguePadel(centralUnit, Position.Right);
-        leftPanal = new ControlPanal(centralUnit);
-        rightPanal = new ControlPanal(centralUnit);
+        leftPanal = new ControlPanal(centralUnit, energyUnit);
+        rightPanal = new ControlPanal(centralUnit, energyUnit);
     }
 }
