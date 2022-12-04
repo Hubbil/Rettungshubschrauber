@@ -16,19 +16,15 @@ public class AntiTorguePadel
     }
 
     public void Push()
-    {
+    { 
         if (_position == Position.Left)
         {
-            _unit.ChangeTailRotorDirection(Direction.LEFT);
+            _unit.ChangeTailRotorRpm(-50);
         }
         else
         {
-            _unit.ChangeTailRotorDirection(Direction.RIGHT);
+            _unit.ChangeTailRotorRpm(50);
         }
-    }
-
-    public void StopPushing()
-    {
-        _unit.ChangeTailRotorDirection(Direction.NONE);
+        
     }
 }

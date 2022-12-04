@@ -37,9 +37,9 @@ public class CentralUnit
         }
     }
 
-    public void ChangeTailRotorDirection(Direction direction)
+    public void ChangeTailRotorRpm(int RPM)
     {
-        _helikopter.TailRotor.RotatioDirection = direction;
+        _helikopter.TailRotor.RPM += RPM;
     }
 
     public void ActivateMainRotor()
@@ -64,5 +64,51 @@ public class CentralUnit
     {
         _helikopter.TailRotor.Engine.Off();
         _helikopter.TailRotor.RPM = 0;
+    }
+
+    public void ActivateAntiCollisionLight()
+    {
+        _helikopter.AntiCollisionLight.IsOn = true;
+    }
+    
+    public void DeActivateAntiCollisionLight()
+    {
+        _helikopter.AntiCollisionLight.IsOn = false;
+    }
+
+    public void ActivateLandingLight()
+    {
+        _helikopter.LandingLight.IsOn = true;
+    }
+    
+    public void DeactivateLandingLight()
+    {
+        _helikopter.LandingLight.IsOn = false;
+    }
+
+    public void LockBackDoors()
+    {
+        if (_helikopter.Cabin.LeftDoor.closed)
+        {
+            _helikopter.Cabin.LeftDoor.Locked = true;
+        }
+        if (_helikopter.Cabin.RightDoor.closed)
+        {
+            _helikopter.Cabin.RightDoor.Locked = true;
+        }
+    }
+    
+    public void UnlockBackDoors()
+    {
+        _helikopter.Cabin.RightDoor.Locked = false;
+        _helikopter.Cabin.LeftDoor.Locked = false;
+    }
+
+    public void Stop()
+    {
+        DeactivateMainRotor();
+        DeactivateTailRotor();
+        DeactivateLandingLight();
+        DeActivateAntiCollisionLight();
     }
 }
