@@ -129,10 +129,14 @@ public class Area
             int SectionJ = 0;
             for (int i = iStart; i < iMax; i++)
             {
+                SectionJ = 0;
                 for (int j = jStart; j < jMax; j++)
                 {
                     Sections[m].Content[SectionI,SectionJ] = Content[i, j];
+                    SectionJ++;
                 }
+
+                SectionI++;
             }
         }
         InsertHuman();

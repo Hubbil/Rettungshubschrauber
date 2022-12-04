@@ -1,4 +1,5 @@
-﻿using Rettungshubschrauber.Helikopter.Cockpit;
+﻿using System.Text;
+using Rettungshubschrauber.Helikopter.Cockpit;
 using Rettungshubschrauber.Helikopter.Triebwerke;
 
 namespace Rettungshubschrauber.Helikopter.Technic;
@@ -84,6 +85,7 @@ public class CentralUnit
     public void DeactivateLandingLight()
     {
         _helikopter.LandingLight.IsOn = false;
+        WriteIntoCsv("DeactivateLandingLight");
     }
 
     public void LockBackDoors()
@@ -117,5 +119,18 @@ public class CentralUnit
         DeActivateAntiCollisionLight();
     }
 
-    
+    private void WriteIntoCsv(string action)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append(action);
+        string TimeStamp = DateTime.Now.ToString("dd.MM.yyyy hh:mm:ss");
+        sb.Append(" ");
+        sb.Append(TimeStamp);
+        Console.WriteLine(sb.ToString());
+        StringBuilder filepath = new StringBuilder();
+        filepath.Append(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).ToString()));
+        filepath.Append("/flight_recorder.txt");
+        Console.WriteLine(filepath.ToString());
+        File.WriteAllText(filepath.ToString(),sb.ToString());
+    }
 }
