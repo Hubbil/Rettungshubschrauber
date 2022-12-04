@@ -2,7 +2,14 @@
 
 using Rettungshubschrauber.Helikopter;
 using Rettungshubschrauber.Helikopter.Technic;
+using Rettungshubschrauber.Helikopter.Technic.Drone;
 
-double e = 5;
-double f = e / 2;
-Console.WriteLine(f);
+Area area = new Area();
+foreach (string e in area.Content)
+{
+    Console.WriteLine(e);
+}
+foreach (string f in area.Sections[0].Content)
+{
+    Console.WriteLine(f);
+}
