@@ -14,6 +14,8 @@ public class ControlPanal
     
     public Button LockDoorsButton { get; set; }
     
+    public Button DroneReleaseButton { get; set; }
+    
     public RotaryKnob Knob { get; set; }
 
     private CentralUnit CentralUnit;
@@ -28,6 +30,7 @@ public class ControlPanal
         LandingLight = new Button();
         LockDoorsButton = new Button();
         Knob = new RotaryKnob();
+        DroneReleaseButton = new Button();
         CentralUnit  = unit;
         _energyUnit = eunit;
     }
@@ -100,6 +103,11 @@ public class ControlPanal
             LockDoorsButton.IsOn = true;
             CentralUnit.LockBackDoors();
         }
+    }
+
+    public void PushRealeaseDroneButton()
+    {
+        CentralUnit.ReleaseDrone();
     }
 
     public void TurnRotaryKnob(string state)
